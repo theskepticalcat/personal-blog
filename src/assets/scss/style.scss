@@ -1,0 +1,33 @@
+@import "vars";
+@import "vendor/reset"; //сброс дефолтных стилей
+
+
+html {
+    font-size: 62.5%; //это 10px от 16px(стандарта) //пишем в % чтобы была зависимость в rem
+}
+
+body {
+    background-color: black;
+
+    font-family: system-ui,-apple-system, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans",
+    sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
+    "Segoe UI Symbol", "Noto Color Emoji";
+
+    font-size: 1.4rem; //типа 14px
+    color: $white;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+
+/* Blocks */
+@import "blocks/page";
+@import "blocks/header";
+@import "blocks/sidebar";
+@import "blocks/main";
+@import "blocks/container.scss";
