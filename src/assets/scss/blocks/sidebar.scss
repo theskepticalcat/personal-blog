@@ -1,6 +1,6 @@
 .sidebar {
     width: $sidebar-width;
-    height: 1000vh;
+    height: 100vh;
 
     background-color: $primary;
     box-shadow: 5px 0 15px rgba(#050505, .1);
@@ -22,4 +22,15 @@
         height: 100%;
         object-fit: cover; //на случай загрузки картинки не идеальных размеров
     }
+}
+
+.sidebar__content {
+    padding: 0 2rem;
+    margin-top: -5rem; //половина от размера аватарки
+}
+
+.sidebar__footer {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 2rem;
 }

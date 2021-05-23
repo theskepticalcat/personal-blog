@@ -368,6 +368,7 @@ body {
     background-color: black;
     font-family: system-ui,-apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
     font-size: 1.4rem;
+    line-height: 1.5;
     color: #fff;
 }
 
@@ -394,8 +395,9 @@ body {
 
 .sidebar {
     width: 300px;
-    height: 1000vh;
-    background-color: #ccc;
+    height: 100vh;
+    background-color: #202020;
+    box-shadow: 5px 0 15px rgba(5, 5, 5, 0.1);
     position: fixed;
     top: 0;
     left: 0;
@@ -407,11 +409,104 @@ body {
 }
 
 .sidebar__header img {
+    background-color: #121212;
     display: block;
     width: 100%;
     height: 100%;
     -o-object-fit: cover;
     object-fit: cover;
+}
+
+.sidebar__content {
+    padding: 0 2rem;
+    margin-top: -5rem;
+}
+
+.sidebar__footer {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    padding: 0 2rem;
+}
+
+.profile__avatar {
+    display: block;
+    width: 10rem;
+    height: 10rem;
+    margin: 0 auto 2rem;
+    position: relative;
+    border: 2px solid #fff;
+    box-shadow: 0 7px 20 rgba(0, 0, 0, 0.25);
+    border-radius: 50%;
+}
+
+.profile__name {
+    font-size: 1.8rem;
+    text-align: center;
+}
+
+.profile__prof {
+    margin-bottom: 2rem;
+    font-size: 1.4rem;
+    font-weight: 300;
+    color: #DEDEDE;
+    text-align: center;
+}
+
+.profile__text {
+    padding: 3rem 0;
+    margin: 3rem 0;
+    font-size: 1.2rem;
+    text-align: center;
+    border-top: 1px solid #1C1C1C;
+    border-bottom: 1px solid #1C1C1C;
+}
+
+.social {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-pack: center;
+    justify-content: center;
+}
+
+.social__item {
+    margin: 0 auto;
+}
+
+.btn {
+    display: inline-block;
+    vertical-align: top;
+    padding: 1.15em 2.1em;
+    background: #121212;
+    border: none;
+    cursor: pointer;
+    border-radius: 3em;
+    font-family: inherit;
+    font-size: 1.2rem;
+    font-weight: 500;
+    line-height: 1.1;
+    color: #fff;
+    text-decoration: none;
+    transition: background-color .2s linear;
+}
+
+.btn--red {
+    background-color: #ED3024;
+    box-shadow: 0 7px 17px -10px rgba(237, 48, 36, 0.3);
+}
+
+.btn--red:hover {
+    background-color: #cd1c11;
+}
+
+.btn--blue {
+    background-color: #3137C9;
+    box-shadow: 0 7px 17px -10px rgba(49, 55, 201, 0.3);
+}
+
+.btn--blue:hover {
+    background-color: #272ca0;
 }
 
 .main {

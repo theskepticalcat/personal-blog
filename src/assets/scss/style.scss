@@ -27,12 +27,13 @@ body {
 
 
 /* Blocks */
-@import "blocks/page";
-@import "blocks/header";
+@import "blocks/page.scss";
+@import "blocks/header.scss";
 
-@import "blocks/sidebar";
-@import "blocks/profile";
-@import "blocks/social";
+@import "blocks/sidebar.scss";
+@import "blocks/profile.scss";
+@import "blocks/social.scss";
+@import "blocks/btn.scss";
 
-@import "blocks/main";
+@import "blocks/main.scss";
 @import "blocks/container.scss";
