@@ -3,6 +3,8 @@ layout: default
 title: PersonalBlog | Home
 ---
 
+
+<!-- Stories -->
 <div class="stories">
     <div class="stories__item">
         <img class="stories__preview" src="assets/images/stories/stories-1.png" alt="">
@@ -24,4 +26,22 @@ title: PersonalBlog | Home
         <div class="stories__title">Весна пришла</div>
         <time class="stories__date" datetime="2021-05-21 15:30">21.05.2021</time>
     </div>
+</div> <!-- /.stories -->
+
+
+<!-- Add post -->
+<div class="add-post">
+    <form class="add-post__form" action="/" method="POST">
+        <textarea class="add-post__textarea" name="post-text" placeholder="Напишите что-нибудь"></textarea>
+
+        <div class="add-post__form-actions"> <!-- Buttons -->
+            <label class="add-post__file" for="add-post-file">
+               <input type="file" id="add-post-file">
+            </label>
+            <button class="add-post__send" type="submit">
+                <img src="assets/images/send.svg" alt="Отправить">
+            </button>
+        </div> <!-- /.buttons -->
+
+    </form>
 </div>
