@@ -27,6 +27,14 @@ body {
 
 a:focus { outline: none; }
 
+a {
+    text-decoration: none;
+
+    &:hover {
+        text-decoration: underline
+    }
+}
+
 
 /* Blocks */
 @import "blocks/page.scss";
@@ -42,7 +50,12 @@ a:focus { outline: none; }
 
 @import "blocks/stories.scss";
 @import "blocks/add-post.scss";
+
 @import "blocks/post.scss";
+@import "blocks/related.scss";
+@import "blocks/comments.scss";
+
+@import "blocks/form.scss";
 
 @import "blocks/embed.scss";
 

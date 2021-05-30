@@ -1,6 +1,8 @@
 //оболочка для iframe и т.п.
 
-.embed {
+.embed,
+.fr-video { //класс из october.cms для видео (span оболочка)
+    display: block;
     position: relative;
     overflow: hidden;
 
