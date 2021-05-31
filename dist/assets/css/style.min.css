@@ -681,6 +681,13 @@ a {
   .post__title--mb0 {
     margin-bottom: 0; }
 
+.post__subtitle {
+  margin-top: 3rem;
+  margin-bottom: 2rem;
+  font-style: 1.6rem;
+  color: #fff;
+  font-weight: 500; }
+
 .post__description {
   font-size: 1.4rem;
   color: #fff; }
@@ -766,19 +773,12 @@ a {
   margin-left: .5rem; }
 
 .related {
-  padding: 3rem 0 .5rem;
+  padding-bottom: 0.5rem;
   border-bottom: 1px solid #121212; }
 
 .related__list {
   display: flex;
   flex-wrap: wrap; }
-
-.related__title {
-  margin-bottom: 2rem;
-  font-size: 1.6rem;
-  line-height: 1.3;
-  color: #fff;
-  font-weight: 500; }
 
 .related__list--item {
   width: 50%;
@@ -799,13 +799,53 @@ a {
   color: #828282; }
 
 .comments {
-  margin-top: 3rem; }
+  margin-top: 5rem; }
 
-.comments__title {
-  margin-bottom: 2rem;
-  font-style: 1.6rem;
+.comments__item {
+  margin-bottom: 3rem; }
+  .comments__item > .comments {
+    padding-left: 3rem;
+    margin-top: 3rem; }
+
+.comments__header {
+  display: flex;
+  margin-bottom: 1.5rem; }
+
+.comments__avatar {
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%; }
+
+.comments__author {
+  flex-grow: 1;
+  padding-left: 1.5rem;
+  font-size: 1.2rem;
+  line-height: 1.4; }
+
+.comments__name {
   color: #fff;
   font-weight: 500; }
+
+.comments__pubdate {
+  color: #757575; }
+
+.comments__text {
+  margin-bottom: 1rem;
+  font-size: 1.2rem;
+  line-height: 1.3;
+  color: #fff; }
+
+.comments__reply {
+  padding: 0;
+  border: none;
+  background: none;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 1.2rem;
+  line-height: 1.1;
+  color: #3137C9; }
+  .comments__reply:hover {
+    text-decoration: underline; }
 
 .form__group {
   margin-bottom: 1.5rem;

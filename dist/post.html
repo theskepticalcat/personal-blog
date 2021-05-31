@@ -219,7 +219,7 @@
                      </div> <!-- /.post__text -->
              
                      <div class="related">
-                         <h3 class="related__title">Интересно почитать</h3>
+                         <h3 class="post__subtitle">Интересно почитать</h3>
              
                          <ul class="related__list">
                              <li class="related__list--item">
@@ -253,8 +253,7 @@
                          </ul>
                      </div> <!-- /.related -->
              
-                     <div class="comments">
-                         <h3 class="comments__title">Обсуждение</h3>
+                         <h3 class="post__subtitle">Обсуждение</h3>
              
                          <form class="form" action="/" method="POST">
                              <div class="form__group">
@@ -263,7 +262,48 @@
                              </div>
                              <button class="btn btn--blue btn--rounded btn--small" type="submit">Отправить</button>
                          </form>
-                     </div>
+             
+                         <ul class="comments">
+                             <li class="comments__item">
+                                 <div class="comments__header">
+                                     <img class="comments__avatar" src="htpps://placehold.it/30" alt="">
+             
+                                     <div class="comments__author">
+                                         <div class="comments__name">User Name</div>
+                                         <time class="comments__pubdate" datetime="2021-06-21 15:30">1 неделю назад</time>
+                                     </div>
+                                 </div>
+             
+                                 <div class="comments__text">Lorem, ipsum dolor sit amet consectetur 
+                                     adipisicing elit. Quo commodi nemo obcaecati praesentium 
+                                     corporis illum, iste quia sequi mollitia officiis eius amet 
+                                     repellat tempore recusandae aut veniam, doloremque ab ipsa!
+                                 </div>
+             
+                                 <button class="comments__reply" type="button">ответить</button>
+                                 
+                                 <ul class="comments"> <!-- вложенный комментарий -->
+                                     <li class="comments__item">
+                                         <div class="comments__header">
+                                             <img class="comments__avatar" src="htpps://placehold.it/30" alt="">
+                     
+                                             <div class="comments__author">
+                                                 <div class="comments__name">User Name</div>
+                                                 <time class="comments__pubdate" datetime="2021-06-21 15:30">1 неделю назад</time>
+                                             </div>
+                                         </div>
+                     
+                                         <div class="comments__text">Lorem, ipsum dolor sit amet consectetur 
+                                             adipisicing elit. Quo commodi nemo obcaecati praesentium 
+                                             corporis illum, iste quia sequi mollitia officiis eius amet 
+                                             repellat tempore recusandae aut veniam, doloremque ab ipsa!
+                                         </div>
+                     
+                                         <button class="comments__reply" type="button">ответить</button>
+                                     </li>
+                                 </ul>
+                             </li>
+                         </ul>
              
                  </div> <!-- /.post__content -->
              </article> <!-- /. post -->

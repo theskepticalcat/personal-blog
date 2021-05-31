@@ -1,5 +1,5 @@
 .related {
-    padding: 3rem 0 .5rem;
+    padding-bottom: 0.5rem;
 
     border-bottom: 1px solid $secondary;
 }
@@ -7,15 +7,6 @@
 .related__list {
     display: flex;
     flex-wrap: wrap;
-}
-
-.related__title {
-    margin-bottom: 2rem;
-
-    font-size: 1.6rem;
-    line-height: 1.3;
-    color: $white;
-    font-weight: 500;
 }
 
 .related__list--item {
