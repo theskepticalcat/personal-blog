@@ -23,6 +23,10 @@
 
     background-color: $primary;
     border-radius: 5px;
+
+    &--contact {
+        padding-bottom: 2.5rem;
+    }
 }
 
 .modal__close {
