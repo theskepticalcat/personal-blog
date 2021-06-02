@@ -1,12 +1,24 @@
+.form {
+
+    &--authorization {
+        max-width: 280px;
+        margin: 0 auto;
+    }
+}
+
 .form__group {
     margin-bottom: 1.5rem;
     position: relative;
+
+    &--medium {
+        margin-bottom: 2.5rem;
+    }
 }
 
 .form__control {
     display: block;
     width: 100%;
-    padding: .5rem 0;
+    padding: .5rem 0 .75rem;
 
     background: none; //стили для safari и chrome
     border: none;
@@ -45,4 +57,28 @@
     z-index: 1;
 
     transition: width .2s linear;
+}
+
+
+.form__footer {
+    
+    &--center {
+        text-align: center;
+    }
+}
+
+.form__footer-list {
+    display: flex;
+    justify-content: center;
+
+    font-size: 1.2rem;
+    line-height: 1.2;
+
+    li {
+        margin: 0 .5rem;
+    }
+
+    a {
+        color: $white;
+    }
 }
