@@ -17,6 +17,10 @@ body {
     font-size: 1.4rem; //типа 14px
     line-height: 1.5;
     color: $white;
+
+    &.no-scroll {
+        overflow: hidden;
+    }
 }
 
 *,
@@ -62,9 +66,10 @@ a {
 
 @import "blocks/cabinet.scss";
 
-@import "blocks/embed.scss";
+@import "blocks/modal.scss";
 
 @import "blocks/main.scss";
 @import "blocks/container.scss";
+@import "blocks/embed.scss";
 
 @import "blocks/pagination.scss";
