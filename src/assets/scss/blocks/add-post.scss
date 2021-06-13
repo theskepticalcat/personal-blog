@@ -14,7 +14,7 @@
 
 .add-post__textarea {
     display: block;
-    width: 80%;
+    flex-grow: 1;
     height: 26px;
 
     border: none;
@@ -24,6 +24,7 @@
     font-size: 1.5rem;
     color: $white;
     font-family: inherit;
+    overflow: hidden;
 
     &::placeholder {
         color: #D2D2D2;
@@ -31,7 +32,8 @@
 }
 
 .add-post__form-actions {
-    width: 20%;
+    width: 120px;
+    flex-shrink: 0;
     display: flex;
     justify-content: flex-end;
 }
@@ -50,7 +52,9 @@
 }
 
 .add-post__file{
-    background: #EBEBEB url("../images/add-photo.svg") center no-repeat;
+    background: #EBEBEB url("../images/add-photo.jpg") center no-repeat;
+    min-width: 44px;
+    min-height: 44px;
     
     input {
         display: none;

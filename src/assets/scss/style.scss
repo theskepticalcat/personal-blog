@@ -1,4 +1,5 @@
 @import "vars";
+@import "mixins";
 @import "vendor/reset"; //сброс дефолтных стилей
 
 
@@ -46,6 +47,8 @@ a {
 @import "blocks/nav.scss";
 @import "blocks/subnav.scss";
 @import "blocks/search.scss";
+
+@import "blocks/burger.scss";
 
 @import "blocks/sidebar.scss";
 @import "blocks/profile.scss";
