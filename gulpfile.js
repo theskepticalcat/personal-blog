@@ -24,21 +24,21 @@ const srcPath = 'src/';
 const distPath = 'dist/';
 
 const path = {
-    build: {
+    build: {   //пути, куда собираем из папки src
         html:   distPath,
         js:     distPath + "assets/js/",
         css:    distPath + "assets/css/",
         images: distPath + "assets/images/",
         fonts:  distPath + "assets/fonts/"
     },
-    src: {
+    src: {  //откуда собираем
         html:   srcPath + "*.html",
         js:     srcPath + "assets/js/*.js",
         css:    srcPath + "assets/scss/*.scss",
         images: srcPath + "assets/images/**/*.{jpg,png,svg,gif,ico,webp,webmanifest,xml,json}",
         fonts:  srcPath + "assets/fonts/**/*.{eot,woff,woff2,ttf,svg}"
     },
-    watch: {
+    watch: { //файлы, за кот. будем следить
         html:   srcPath + "**/*.html",
         js:     srcPath + "assets/js/**/*.js",
         css:    srcPath + "assets/scss/**/*.scss",
@@ -52,7 +52,7 @@ const path = {
 
 /* Tasks */
 
-function serve() {
+function serve() {  //локальный сервер
     browserSync.init({
         server: {
             baseDir: "./" + distPath
@@ -60,7 +60,7 @@ function serve() {
     });
 }
 
-function html(cb) {
+function html(cb) {  //собираем html
     panini.refresh();
     return src(path.src.html, {base: srcPath})
         .pipe(plumber())
@@ -71,15 +71,15 @@ function html(cb) {
             helpers:    srcPath + 'helpers/',
             data:       srcPath + 'data/'
         }))
-        .pipe(dest(path.build.html))
-        .pipe(browserSync.reload({stream: true}));
+        .pipe(dest(path.build.html)) //переносится в папку build
+        .pipe(browserSync.reload({stream: true})); //перезагр-тся сервер
 
     cb();
 }
 
 function css(cb) {
     return src(path.src.css, {base: srcPath + "assets/scss/"})
-        .pipe(plumber({
+        .pipe(plumber({  //слежка за ошибками в scss коде
             errorHandler : function(err) {
                 notify.onError({
                     title:    "SCSS Error",
@@ -95,8 +95,8 @@ function css(cb) {
             cascade: true
         }))
         .pipe(cssbeautify())
-        .pipe(dest(path.build.css))
-        .pipe(cssnano({
+        .pipe(dest(path.build.css)) //закидываем в папку build
+        .pipe(cssnano({  //уменьшаем
             zindex: false,
             discardComments: {
                 removeAll: true
@@ -197,17 +197,17 @@ function jsWatch(cb) {
 
 function images(cb) {
     return src(path.src.images)
-        .pipe(imagemin([
-            imagemin.gifsicle({interlaced: true}),
-            imagemin.mozjpeg({quality: 95, progressive: true}),
-            imagemin.optipng({optimizationLevel: 5}),
-            imagemin.svgo({
-                plugins: [
-                    { removeViewBox: true },
-                    { cleanupIDs: false }
-                ]
-            })
-        ]))
+        //.pipe(imagemin([
+        //    imagemin.gifsicle({interlaced: true}),
+        //    imagemin.mozjpeg({quality: 95, progressive: true}),
+        //    imagemin.optipng({optimizationLevel: 5}),
+        //    imagemin.svgo({
+        //        plugins: [
+        //            { removeViewBox: true },
+        //            { cleanupIDs: false }
+        //        ]
+        //    })
+        //]))
         .pipe(dest(path.build.images))
         .pipe(browserSync.reload({stream: true}));
 
