@@ -6,6 +6,7 @@
 
     &--mobile {
         display: none;
+        margin: 3rem 0;
 
         @include breakpoint($tablet-bp) {
             display: block;
@@ -33,6 +34,15 @@
 
         > .subnav {
             display: block;
+        }
+    }
+
+
+    @include breakpoint($tablet-bp) {
+        &:hover {
+            .nav__link {
+                background: none;
+            }
         }
     }
 }
@@ -69,5 +79,14 @@
             right: 1.35rem;
             transform: translateY(-50%); //стрелочка ровно по центру
         }
+    }
+
+
+
+    @include breakpoint($tablet-bp) {
+        padding-left: 0;
+        padding-right: 0;
+
+        font-size: 1.6rem;
     }
 }

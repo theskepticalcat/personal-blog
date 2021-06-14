@@ -10,10 +10,16 @@
     left: 0;
     z-index: $z-index-sidebar;
 
+
     
     @include breakpoint($tablet-bp) {
-        top: 4rem;
+        display: flex;
+        flex-direction: column;
         height: calc(100vh - 4rem); //место под видимость бургера
+        padding-bottom: 1.5rem;
+        overflow: auto;
+
+        top: 4rem;
 
         transform: translateX(-100%); //появление сбоку (плавное)
         transition: transform .2s linear;
@@ -45,7 +51,7 @@
 
 
     @include breakpoint($tablet-bp) {
-
+        flex-grow: 1;
     }
 }
 

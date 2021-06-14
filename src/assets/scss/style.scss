@@ -19,7 +19,8 @@ body {
     line-height: 1.5;
     color: $white;
 
-    &.no-scroll {
+    &.no-scroll,
+    &.show-sidebar { //убираем скролл при открытом sidebar
         overflow: hidden;
     }
 }
