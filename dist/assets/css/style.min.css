@@ -516,6 +516,12 @@ a {
   color: #fff; }
   .search__input::placeholder {
     color: rgba(255, 255, 255, 0.4); }
+  @media screen and (max-width: 991px) {
+    .search__input {
+      height: 4rem;
+      padding-top: .9rem;
+      padding-bottom: .9rem;
+      font-size: 1.6rem; } }
 
 .burger {
   display: none;
@@ -713,6 +719,10 @@ a {
   grid-column-gap: 13px;
   grid-template-rows: 195px;
   margin-bottom: 3rem; }
+  @media screen and (max-width: 575px) {
+    .stories {
+      grid-template-columns: 140px 140px 140px 140px;
+      overflow: auto; } }
 
 .stories__item {
   overflow: hidden;
@@ -771,6 +781,9 @@ a {
   background-color: #121212;
   box-shadow: 0 15px 25px rgba(0, 0, 0, 0.45);
   border-radius: 5px; }
+  @media screen and (max-width: 575px) {
+    .add-post {
+      padding: 1.5rem; } }
 
 .add-post__form {
   display: flex;
@@ -795,6 +808,9 @@ a {
   flex-shrink: 0;
   display: flex;
   justify-content: flex-end; }
+  @media screen and (max-width: 575px) {
+    .add-post__form-actions {
+      width: 9rem; } }
 
 .add-post__file,
 .add-post__send {
@@ -805,18 +821,25 @@ a {
   border-radius: 50%;
   cursor: pointer;
   transition: background-color .2s linear; }
+  @media screen and (max-width: 575px) {
+    .add-post__file,
+    .add-post__send {
+      width: 3.6rem;
+      height: 3.6rem;
+      background-size: 15px; } }
 
 .add-post__file {
-  background: #EBEBEB url("../images/add-photo.jpg") center no-repeat;
-  min-width: 44px;
-  min-height: 44px; }
+  background: #EBEBEB url("../images/add-photo.jpg") center no-repeat; }
   .add-post__file input {
     display: none; }
   .add-post__file:hover {
     background-color: #d2d2d2; }
 
 .add-post__send {
+  background: #3137C9 url("../images/send.svg") center no-repeat;
   margin-left: 1.5rem;
+  font-size: 0;
+  color: transparent;
   border-color: #3137C9; }
   .add-post__send:hover {
     background-color: #272ca0; }
@@ -828,6 +851,9 @@ a {
   background-color: #202020;
   box-shadow: 0 15px 25px rgba(0, 0, 0, 0.35);
   border-radius: 5px; }
+  @media screen and (max-width: 575px) {
+    .post {
+      padding: 1.5rem; } }
 
 .post__header {
   margin: 0 0 2.5rem; }
@@ -844,13 +870,14 @@ a {
 
 .post__title {
   margin-bottom: 1.5rem;
-  font-size: 1.4rem;
+  font-size: 1.8rem;
+  line-height: 1.4;
   color: #fff;
   font-weight: 500; }
   .post__title a {
     color: inherit; }
-  .post__title--mb0 {
-    margin-bottom: 0; }
+  .post__title--open {
+    margin-bottom: .75rem; }
 
 .post__subtitle {
   margin-top: 3rem;
@@ -903,6 +930,10 @@ a {
   display: flex;
   justify-content: space-between;
   align-items: center; }
+  @media screen and (max-width: 575px) {
+    .post__footer {
+      flex-direction: column;
+      align-items: flex-start; } }
 
 .post__data {
   display: flex;
@@ -910,6 +941,10 @@ a {
   line-height: 1.2rem; }
   .post__data a {
     color: inherit; }
+  @media screen and (max-width: 575px) {
+    .post__data {
+      margin-bottom: 1rem;
+      font-size: 1.2rem; } }
 
 .post__data-item:not(:last-child):after {
   content: "";
@@ -950,10 +985,16 @@ a {
 .related__list {
   display: flex;
   flex-wrap: wrap; }
+  @media screen and (max-width: 575px) {
+    .related__list {
+      flex-direction: column; } }
 
 .related__list--item {
   width: 50%;
   margin-bottom: 2.5rem; }
+  @media screen and (max-width: 575px) {
+    .related__list--item {
+      width: 100%; } }
 
 .related__list--title {
   font-style: 1.4rem;
@@ -977,6 +1018,9 @@ a {
   .comments__item > .comments {
     padding-left: 3rem;
     margin-top: 3rem; }
+    @media screen and (max-width: 575px) {
+      .comments__item > .comments {
+        padding-left: 1.5rem; } }
 
 .comments__header {
   display: flex;
@@ -1210,14 +1254,14 @@ a {
   padding: 10rem 0 8rem 300px; }
   @media screen and (max-width: 991px) {
     .main {
-      padding-left: 0; } }
+      padding: 7rem 0 5rem; } }
 
 .container {
   max-width: 70rem;
   margin: 0 auto;
   padding-left: 5rem;
   padding-right: 5rem; }
-  @media screen and (max-width: 700px) {
+  @media screen and (max-width: 575px) {
     .container {
       padding-left: 1.5rem;
       padding-right: 1.5rem; } }
@@ -1251,6 +1295,9 @@ a {
   display: flex;
   justify-content: center;
   margin-top: 8rem; }
+  @media screen and (max-width: 991px) {
+    .pagination {
+      margin-top: 5rem; } }
 
 .pagination__item {
   margin: 0 .5rem; }

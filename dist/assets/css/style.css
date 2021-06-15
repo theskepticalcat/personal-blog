@@ -372,7 +372,7 @@ body {
     color: #fff;
 }
 
-body.no-scroll {
+body.no-scroll, body.show-sidebar {
     overflow: hidden;
 }
 
@@ -404,6 +404,24 @@ a:hover {
     justify-content: center;
     overflow: hidden;
     min-height: 100vh;
+}
+
+@media screen and (max-width: 991px) {
+    .show-sidebar .page {
+        position: relative;
+    }
+
+    .show-sidebar .page::after {
+        content: "";
+        display: block;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.9);
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 100;
+    }
 }
 
 .page__title {
@@ -466,6 +484,7 @@ a:hover {
 
 .nav--mobile {
     display: none;
+    margin: 3rem 0;
 }
 
 @media screen and (max-width: 991px) {
@@ -497,6 +516,12 @@ a:hover {
 
 .nav__item:hover > .subnav {
     display: block;
+}
+
+@media screen and (max-width: 991px) {
+    .nav__item:hover .nav__link {
+        background: none;
+    }
 }
 
 .nav__link {
@@ -531,6 +556,14 @@ a:hover {
     transform: translateY(-50%);
 }
 
+@media screen and (max-width: 991px) {
+    .nav__link {
+        padding-left: 0;
+        padding-right: 0;
+        font-size: 1.6rem;
+    }
+}
+
 .subnav {
     display: none;
     width: 16.5rem;
@@ -541,6 +574,16 @@ a:hover {
     position: absolute;
     top: 100%;
     left: 0;
+}
+
+@media screen and (max-width: 991px) {
+    .subnav {
+        position: static;
+        width: 100%;
+        background-color: transparent;
+        box-shadow: none;
+        padding-left: 2rem;
+    }
 }
 
 .subnav__link {
@@ -556,6 +599,18 @@ a:hover {
 .subnav__link:hover {
     background-color: #272ca0;
     text-decoration: none;
+}
+
+@media screen and (max-width: 991px) {
+    .subnav__link {
+        padding-left: 0;
+        padding-right: 0;
+        font-size: 1.5rem;
+    }
+
+    .subnav__link:hover {
+        background: none;
+    }
 }
 
 .search {
@@ -593,6 +648,15 @@ a:hover {
 
 .search__input::placeholder {
     color: rgba(255, 255, 255, 0.4);
+}
+
+@media screen and (max-width: 991px) {
+    .search__input {
+        height: 4rem;
+        padding-top: .9rem;
+        padding-bottom: .9rem;
+        font-size: 1.6rem;
+    }
 }
 
 .burger {
@@ -643,20 +707,20 @@ a:hover {
     transition: opacity .2c linear;
 }
 
-.burger.show-sidebar .burger span {
+.show-sidebar .burger span {
     opacity: 0;
 }
 
-.burger.show-sidebar .burger::before, .burger.show-sidebar .burger::after {
+.show-sidebar .burger::before, .show-sidebar .burger::after {
     top: 50%;
 }
 
-.burger.show-sidebar .burger::before {
+.show-sidebar .burger::before {
     -webkit-transform: rotate(45deg);
     transform: rotate(45deg);
 }
 
-.burger.show-sidebar .burger::after {
+.show-sidebar .burger::after {
     -webkit-transform: rotate(-45deg);
     transform: rotate(-45deg);
 }
@@ -680,8 +744,14 @@ a:hover {
 
 @media screen and (max-width: 991px) {
     .sidebar {
-        top: 4rem;
+        display: -ms-flexbox;
+        display: flex;
+        -ms-flex-direction: column;
+        flex-direction: column;
         height: calc(100vh - 4rem);
+        padding-bottom: 1.5rem;
+        overflow: auto;
+        top: 4rem;
         -webkit-transform: translateX(-100%);
         transform: translateX(-100%);
         transition: -webkit-transform .2s linear;
@@ -718,6 +788,13 @@ a:hover {
     padding: 0 2rem;
 }
 
+@media screen and (max-width: 991px) {
+    .sidebar__content {
+        -ms-flex-positive: 1;
+        flex-grow: 1;
+    }
+}
+
 .sidebar__footer {
     display: -ms-flexbox;
     display: flex;
@@ -734,6 +811,7 @@ a:hover {
     .profile {
         margin-top: -1.5rem;
         position: relative;
+        border-bottom: 1px solid #121212;
     }
 }
 
@@ -880,6 +958,13 @@ a:hover {
     margin-bottom: 3rem;
 }
 
+@media screen and (max-width: 575px) {
+    .stories {
+        grid-template-columns: 140px 140px 140px 140px;
+        overflow: auto;
+    }
+}
+
 .stories__item {
     overflow: hidden;
     position: relative;
@@ -953,6 +1038,12 @@ a:hover {
     border-radius: 5px;
 }
 
+@media screen and (max-width: 575px) {
+    .add-post {
+        padding: 1.5rem;
+    }
+}
+
 .add-post__form {
     display: -ms-flexbox;
     display: flex;
@@ -1004,6 +1095,12 @@ a:hover {
     justify-content: flex-end;
 }
 
+@media screen and (max-width: 575px) {
+    .add-post__form-actions {
+        width: 9rem;
+    }
+}
+
 .add-post__file,
 .add-post__send {
     display: block;
@@ -1015,10 +1112,17 @@ a:hover {
     transition: background-color .2s linear;
 }
 
+@media screen and (max-width: 575px) {
+    .add-post__file,
+    .add-post__send {
+        width: 3.6rem;
+        height: 3.6rem;
+        background-size: 15px;
+    }
+}
+
 .add-post__file {
     background: #EBEBEB url("../images/add-photo.jpg") center no-repeat;
-    min-width: 44px;
-    min-height: 44px;
 }
 
 .add-post__file input {
@@ -1030,7 +1134,10 @@ a:hover {
 }
 
 .add-post__send {
+    background: #3137C9 url("../images/send.svg") center no-repeat;
     margin-left: 1.5rem;
+    font-size: 0;
+    color: transparent;
     border-color: #3137C9;
 }
 
@@ -1045,6 +1152,12 @@ a:hover {
     background-color: #202020;
     box-shadow: 0 15px 25px rgba(0, 0, 0, 0.35);
     border-radius: 5px;
+}
+
+@media screen and (max-width: 575px) {
+    .post {
+        padding: 1.5rem;
+    }
 }
 
 .post__header {
@@ -1067,7 +1180,8 @@ a:hover {
 
 .post__title {
     margin-bottom: 1.5rem;
-    font-size: 1.4rem;
+    font-size: 1.8rem;
+    line-height: 1.4;
     color: #fff;
     font-weight: 500;
 }
@@ -1163,6 +1277,15 @@ a:hover {
     align-items: center;
 }
 
+@media screen and (max-width: 575px) {
+    .post__footer {
+        -ms-flex-direction: column;
+        flex-direction: column;
+        -ms-flex-align: start;
+        align-items: flex-start;
+    }
+}
+
 .post__data {
     display: -ms-flexbox;
     display: flex;
@@ -1172,6 +1295,13 @@ a:hover {
 
 .post__data a {
     color: inherit;
+}
+
+@media screen and (max-width: 575px) {
+    .post__data {
+        margin-bottom: 1rem;
+        font-size: 1.2rem;
+    }
 }
 
 .post__data-item:not(:last-child):after {
@@ -1599,7 +1729,7 @@ a:hover {
 
 @media screen and (max-width: 991px) {
     .main {
-        padding-left: 0;
+        padding: 7rem 0 5rem;
     }
 }
 
@@ -1610,7 +1740,7 @@ a:hover {
     padding-right: 5rem;
 }
 
-@media screen and (max-width: 700px) {
+@media screen and (max-width: 575px) {
     .container {
         padding-left: 1.5rem;
         padding-right: 1.5rem;
@@ -1653,6 +1783,12 @@ a:hover {
     -ms-flex-pack: center;
     justify-content: center;
     margin-top: 8rem;
+}
+
+@media screen and (max-width: 991px) {
+    .pagination {
+        margin-top: 5rem;
+    }
 }
 
 .pagination__item {

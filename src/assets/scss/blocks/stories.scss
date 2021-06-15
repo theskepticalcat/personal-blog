@@ -5,6 +5,12 @@
     grid-template-rows: 195px;
 
     margin-bottom: 3rem;
+
+
+    @include breakpoint($mobile-bp) {
+        grid-template-columns: 140px 140px 140px 140px;
+        overflow: auto;
+    }
 }
 
 .stories__item {
@@ -16,7 +22,7 @@
     box-shadow: 0 5px 15px rgba($black, .2);
     cursor: pointer;
 
-    &::after { //маска
+    &::after {  //маска
         content: "";
         display: block;
         width: 100%;
