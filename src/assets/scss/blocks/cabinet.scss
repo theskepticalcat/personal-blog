@@ -1,12 +1,18 @@
 .cabinet {
     display: flex;
+
+
+    @include breakpoint($mobile-bp) {
+        flex-direction: column;
+    }
 }
 
 .cabinet__form {
     width: 34rem;
 
-    @media (max-width: $tablet-bp) {
 
+    @include breakpoint($mobile-bp) {
+        order: 2;
     }
 }
 
@@ -18,9 +24,13 @@
     img {
         display: block;
         margin-bottom: 1.5rem;
+    }
 
-        width: 150px;
-        height: 150px;
+
+    @include breakpoint($mobile-bp) {
+        order: 1;
+        padding-left: 0;
+        margin-bottom: 2rem;
     }
 }
 

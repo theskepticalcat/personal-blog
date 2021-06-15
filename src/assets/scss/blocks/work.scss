@@ -6,10 +6,15 @@
     background-color: $primary;
     box-shadow: 0 15px 25px rgba($black, .35);
     border-radius: 5px;
+
+
+    @include breakpoint($mobile-bp) {
+        flex-direction: column;
+    }
 }
 
 .work__preview {
-    width: 31rem;
+    min-width: 40%;
 
     img {
         display: block;
@@ -17,6 +22,12 @@
         height: 100%;
 
         object-fit: cover;
+    }
+
+
+    @include breakpoint($mobile-bp) {
+        width: 200%;
+        height: 17rem;
     }
 }
 
@@ -26,6 +37,12 @@
 
     min-width: 29rem;
     padding: 2.5rem;
+
+
+    @include breakpoint($mobile-bp) {
+        min-width: 0;
+        padding: 1.5rem;
+    }
 }
 
 .work__title {
@@ -38,6 +55,11 @@
     a {
         color: inherit;
     }
+
+
+    @include breakpoint($mobile-bp) {
+        margin-bottom: 2rem;
+    }
 }
 
 .work__description {
@@ -47,9 +69,21 @@
     font-weight: 300;
     line-height: 1.68;
     color: #D2D2D2;
+
+
+    @include breakpoint($mobile-bp) {
+        margin-bottom: 2rem;
+
+        font-size: 1.4rem;
+    }
 }
 
 .work__footer {
     margin-top: auto;
     text-align: right;
+
+
+    @include breakpoint($mobile-bp) {
+        text-align: left;
+    }
 }
