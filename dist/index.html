@@ -133,6 +133,7 @@
      
                      <li class="nav__item">
                          <a class="nav__link nav__link--subnav" href="#">Статьи</a>
+     
                          <ul class="subnav">
                              <li>
                                  <a class="subnav__link" href="#">Создание сайтов</a>
@@ -143,7 +144,7 @@
                              <li>
                                  <a class="subnav__link" href="#">Продвижение</a>
                              </li>
-                         </ul>
+                         </ul> <!-- /.subnav -->
                      </li>
      
                      <li class="nav__item">
@@ -153,6 +154,14 @@
                      <li class="nav__item">
                          <a class="nav__link" href="text.html">Реклама</a>
                      </li>
+     
+                     <li class="nav__item">
+                         <a class="nav__link" href="profile.html">Профиль</a>
+                     </li>
+     
+                     <li class="nav__item">
+                         <a class="nav__link" href="#">Выйти</a>
+                     </li>
                  </ul>
              </nav> <!-- /.nav nav--mobile -->
      
@@ -161,7 +170,7 @@
      
          <div class="sidebar__footer">
              <a class="btn btn--red" href="works.html">Мои работы</a>
-             <button class="btn btn--blue" type="button">Написать мне</button>
+             <button class="btn btn--blue" type="button" data-modal="contact-modal">Написать мне</button>
          </div>
      
      </aside>
@@ -172,7 +181,7 @@
              
              <!-- Stories -->
              <div class="stories">
-                 <div class="stories__item">
+                 <div class="stories__item" data-modal="story-modal">
                      <img class="stories__preview" src="assets/images/stories/stories-1.png" alt="">
                      <div class="stories__title">Отдыхаю на природе</div>
                      <time class="stories__date" datetime="2021-05-21 15:30">21.05.2021</time>
@@ -386,9 +395,88 @@
 
     </div> <!-- обертка -->
 
-    <div class="modal">
-        <video class="modal__video" src="" poster="https://placehold.it/420x580"></video>
-    </div>    <!-- JS-->
+    <div class="modal" id ="story-modal">
+        <div class="modal__content modal__content--story">
+            <video class="modal__video" src="" 
+            poster="https://via.placeholder.com/420x580"></video>
+        </div>
+    </div>    <div class="modal" id="contact-modal">
+        <div class="modal__content">
+            <!-- Close button -->
+            <button class="modal__close" type="button">
+                <img src="assets/images/close.svg" alt="Закрыть">
+            </button>
+    
+            
+            <form class="form" action="/" method="POST">
+    
+                <div class="form__group form__group--medium">
+                    <input class="form__control" type="text" placeholder="Ваше имя">
+                    <span class="form__line"></span>
+                </div>
+    
+                <div class="form__group form__group--medium">
+                    <input class="form__control" type="email" placeholder="Ваше email">
+                    <span class="form__line"></span>
+                </div>
+            
+                <div class="form__group form__group--medium">
+                    <textarea class="form__control form__control--textarea" placeholder="Текст сообщения" name=""></textarea>
+                    <span class="form__line"></span>
+                </div>
+            
+            
+                <div class="form__footer">
+                    <div class="form__group form__group--medium">
+                        <button class="btn btn--blue btn--rounded btn--small" type="submit">Войти</button>
+                    </div>
+                </div>
+            </form>
+    
+            <ul class="modal__footer">
+                <li>e-mail: <a href="mailto:info@mywebsite.ru">info@mywebsite.ru</a></li>
+                <li>тел: <a href="tel:+94323285622">+943-232-856-22</a></li>
+            </ul>
+    
+        </div> <!-- /.modal__content -->
+    </div> <!-- /.modal -->    <div class="modal">
+        <div class="modal__content modal__content--contact">
+            <!-- Close button -->
+            <button class="modal__close" type="button">
+                <img src="assets/images/close.svg" alt="Закрыть">
+            </button>
+    
+    
+            <ul class="social">
+    
+                <li class="social__item">
+                    <a class="social__link" href="#">
+                        <img src="assets/images/share/facebook-modal.svg" alt="">
+                    </a>
+                </li>
+    
+                <li class="social__item">
+                    <a class="social__link" href="#">
+                        <img src="assets/images/share/twitter-modal.svg" alt="">
+                    </a>
+                </li>
+    
+                <li class="social__item">
+                    <a class="social__link" href="#">
+                        <img src="assets/images/share/vk-modal.svg" alt="">
+                    </a>
+                </li>
+    
+                <li class="social__item">
+                    <a class="social__link" href="#">
+                        <img src="assets/images/share/copy-modal.svg" alt="">
+                    </a>
+                </li>
+            </ul>
+    
+        </div> <!-- /.modal__content -->
+    </div> <!-- /.modal -->    
+    <!-- JS-->
     <script src="assets/js/app.js"></script>
 </body>
 </html>
