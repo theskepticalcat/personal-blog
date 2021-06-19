@@ -132,7 +132,9 @@ title: Post
 
             <form class="form" action="/" method="POST">
                 <div class="form__group">
-                    <textarea class="form__control form__control--textarea" name="comment-text" placeholder="текст комментария"></textarea>
+                    <textarea class="form__control form__control--textarea" name="comment-text" 
+                        placeholder="текст комментария" data-autoresize>
+                    </textarea>
                     <span class="form__line"></span> <!-- линия -->
                 </div>
                 <button class="btn btn--blue btn--rounded btn--small" type="submit">Отправить</button>

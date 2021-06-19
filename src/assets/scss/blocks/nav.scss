@@ -33,7 +33,7 @@
         }
 
         > .subnav {
-            display: block;
+            display: block;  //появление субнавигации
         }
     }
 
@@ -80,7 +80,6 @@
             transform: translateY(-50%); //стрелочка ровно по центру
         }
     }
-
 
 
     @include breakpoint($tablet-bp) {

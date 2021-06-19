@@ -14,13 +14,14 @@
 
 .add-post__form {
     display: flex;
-    align-items: center;
+    align-items: flex-end;
 }
 
 .add-post__textarea {
     display: block;
+    align-self: center;
     flex-grow: 1;
-    height: 26px;
+    height: 34px;
 
     border: none;
     background: transparent;
@@ -82,7 +83,7 @@
 }
 
 .add-post__send {
-    background: $blue url("../images/send.svg") center no-repeat;
+    background: $blue url("../images/send.png") center no-repeat;
     margin-left: 1.5rem;
     font-size: 0;
     color: transparent;
