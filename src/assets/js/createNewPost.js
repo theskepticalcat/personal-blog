@@ -13,16 +13,13 @@ let textArea = document.querySelector('.add-post__textarea');
 
 textArea.innerHTML = '';
 
-const data = new Array();
-
 
 let formElements = [...addPost.elements].filter( elem =>
     elem.tagName !== 'BUTTON');
 console.log(formElements);
 
 
-const saveDataBase = () => localStorage.setItem('posts', JSON.stringify(data));
-saveDataBase();
+const saveDataBase = () => localStorage.setItem('posts', JSON.stringify(dataBase));
 
 
 //Отправка поста:
@@ -33,9 +30,8 @@ sendPost.addEventListener('click', event => {
     for (let elem of formElements) {
         itemObj[elem.name] = elem.value; //получаем об-кты со всеми вводами пользователя
     }
-    itemObj.id = counter++; //будет браться число, кот. должно быть следующим в базе данных
-    console.log(itemObj);
-    data.push(itemObj);
+    itemObj.id = counter++; //будет браться число, кот. должно быть следующим в базе
+    dataBase.push(itemObj);
     saveDataBase();
     renderPost();
     textArea.value = '';
@@ -45,13 +41,28 @@ sendPost.addEventListener('click', event => {
 //Pендер:
 const renderPost = (DB = dataBase) => {
     DB.forEach((item) => {
-
         let postInnerHtml = document.createElement('div');
         postInnerHtml.innerHTML = `
-            <div>
-            <h3>${item.postText}</h3>
-            </div>
-        `
-        wallWithPosts.insertAdjacentElement('beforeend', postInnerHtml);
+        <div class="post">
+
+        <div class="post__content">
+            <p class="post__description">${item.postText}</p>
+        </div>
+
+        <div class="post__footer">
+            <ul class="post__data">
+                <li class="post__data-item">
+                    <time datetime="2021-06-21 15:30">
+                        21.06.2021
+                    </time>
+                </li>
+            </ul>
+        </div>
+
+    </div>
+    `
+    wallWithPosts.insertAdjacentElement('afterbegin', postInnerHtml);
     });
 };
+
+renderPost();
