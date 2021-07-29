@@ -47,6 +47,10 @@ a {
     }
 }
 
+.hidden {
+    display: none;
+}
+
 
 /* Blocks */
 @import "blocks/page.scss";

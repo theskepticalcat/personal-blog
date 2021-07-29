@@ -31,26 +31,26 @@ title: Home
 
 <!-- Add post -->
 <div class="add-post">
-    <form class="add-post__form" action="/" method="POST">
-        <textarea class="add-post__textarea" name="post-text" 
-            placeholder="Напишите что-нибудь" data-autoresize>
+    <form class="add-post__form" id="add-post__form">
+        <textarea type="text" class="add-post__textarea" name="postText" 
+            placeholder="Напишите что-нибудь" onfocus="this.placeholder = ''" data-autoresize required>
         </textarea>
 
-        <div class="add-post__form-actions"> <!-- Buttons -->
+        <div class="add-post__form-actions">
             <label class="add-post__file" for="add-post-file">
-               <input type="file" id="add-post-file">
+               <input type="file" id="add-post-file" name="postFile" accept="image/*">
             </label>
 
             <button class="add-post__send" type="submit">
                 Отправить
             </button>
-        </div> <!-- /.buttons -->
-
+        </div>
     </form>
 </div>
 
 
 <!-- Post -->
+<div class="wall">
 <div class="post">
 
     <div class="post__content">
@@ -197,7 +197,7 @@ title: Home
     </div>
 
 </article> <!-- post-4 -->
-
+</div>
 
 <!-- Pagination -->
 <ul class="pagination">
