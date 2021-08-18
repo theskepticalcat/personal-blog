@@ -13,6 +13,10 @@
 }
 
 .add-post__form {
+    position: relative;
+}
+
+.add-post__form > div {
     display: flex;
     align-items: flex-end;
 }
@@ -92,4 +96,14 @@
     &:hover {
         background-color: darken($blue, 10%);
     }
+}
+
+
+.add-post__image {
+    width: 100%;
+    margin: 0 auto;
+}
+
+.add-post__image-preview {
+    transition: 0.5s ease-in-out;
 }

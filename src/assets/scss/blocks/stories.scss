@@ -3,9 +3,12 @@
     grid-template-columns: 1fr 1fr 1fr 1fr;
     grid-column-gap: 13px;
     grid-template-rows: 195px;
-
     margin-bottom: 3rem;
+    -ms-overflow-style: none;
 
+    &::-webkit-scrollbar {
+        display: none;
+    }
 
     @include breakpoint($mobile-bp) {
         grid-template-columns: 140px 140px 140px 140px;

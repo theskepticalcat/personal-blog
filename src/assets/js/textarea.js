@@ -2,7 +2,7 @@ const textarea = document.querySelectorAll('[data-autoresize]');
 textarea.value = '';
 
 textarea.forEach(item => {
-    let textAreaHeigth = item.offsetHeight;  //получаем высоту текстового поля заданную по умолчанию
+    let textAreaHeigth = item.offsetHeight;  //высота текстового поля по умолчанию
 
     item.addEventListener('input', event => {
         let $this = event.target;
